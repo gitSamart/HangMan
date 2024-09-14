@@ -1,60 +1,125 @@
+/* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-}
-
-button {
-    width: 35px;
-}
-
-canvas {
-    margin-top: 30px;
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-#data {
-    float: right;
-}
-
-.hangman-container {
-    max-width: 75vw;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+  }
+  
+  /* Hangman container */
+  .hangman-container {
     text-align: center;
-}
-
-.hangman-phrase {
-    font-size: 24px;
-    margin: 20px 0;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    position: relative;
+  }
+  
+  /* Title styling */
+  .hangman-container h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 36px;
+    color: #333;
+    text-transform: uppercase;
     letter-spacing: 3px;
-}
-
-.hangman-ascii {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-.hangman-input button {
-    padding: 5px 10px;
-    font-size: 20px;
-    background-color: #0080ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Word display (hidden word) */
+  #wordDisplay {
+    font-size: 30px;
+    letter-spacing: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+  }
+  
+  /* Message area (win/loss messages) */
+  #message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 15px;
+  }
+  
+  /* Letters container styling */
+  .letters {
+    margin-top: 20px;
+  }
+  
+  /* Letter button styling */
+  .letters button {
     margin: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: #fff;
     cursor: pointer;
-}
-
-.hangman-input button:hover {
-    background-color: #004fa3;
-}
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .letters button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Wrong guesses display */
+  #wrongGuesses {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  /* Restart button */
+  #restartButton {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #restartButton:hover {
+    background-color: #27ae60;
+  }
+  
+  /* Adding decorative elements */
+  .hangman-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 5px;
+    background-color: #2ecc71;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hangman-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 5px;
+    background-color: #e74c3c;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+  }
